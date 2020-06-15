@@ -1,0 +1,236 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body{
+    font-family: 'Oswald', 'Ubuntu', 微軟正黑體 ,sans-serif;
+}
+
+
+/* 背景 */
+.wrap{
+    margin: 60px auto;
+    width: 1000px;
+    background-color: #1E2336;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    box-shadow: -15px 20px 15px rgba(0,0,0,0.2);
+
+}
+
+/* 裝飾 */
+
+.line{
+    background: -webkit-linear-gradient(left,#C5CB9B,white);
+    background: -o-linear-gradient(right,#C5CB9B,white);
+    background: -moz-linear-gradient(right,#C5CB9B,white);
+    background: linear-gradient(to right,#C5CB9B,white);
+    border-radius: 5px;
+    height: 20px;
+    width: 150px;
+    position: absolute;
+    box-shadow: inset 0 0 0.5em #C5CB9B, -1em 10px 0.5em rgba(105,105,105,0.1);
+    animation: drift 3s linear infinite;
+}
+
+
+
+.line::after{
+    content: "";
+    background: -webkit-linear-gradient(left,#C5CB9B,white);
+    background: -o-linear-gradient(right,#C5CB9B,white);
+    background: -moz-linear-gradient(right,#C5CB9B,white);
+    background: linear-gradient(to right,#C5CB9B,white);
+    border-radius: 5px;
+    height: 20px;
+    width: 150px;
+    position: absolute;
+    box-shadow: inset 0 0 0.5em #C5CB9B, -1em 10px 0.5em rgba(105, 105, 105, 0.1);
+    animation: drift 4s linear infinite;
+}
+
+@keyframes drift{
+    0%{
+        transform: translateX(0px);
+    }
+    50%{
+        transform: translateX(20px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+
+}
+
+.line1{
+    left:-50px;
+}
+
+.line1::after{
+    top: 60px;
+    left:-50px;
+}
+
+.line2{
+    bottom: 70px;
+    right: -100px;
+    animation-delay: 0.2s;
+}
+
+.line2::after{
+    bottom: 60px;
+    right: -25px;
+    animation-delay: 0.5s;
+}
+
+
+/* 標題與描述 */
+
+.header{
+    margin-top: 10px;
+}
+
+.header h1{
+    font-size: 40px;
+    color: #F6EB00;
+    letter-spacing: 5px;
+    font-weight: 700;
+}
+
+.header h1 span{
+    color: #F2F2F2;
+    margin: 5px;
+}
+
+.header p {
+    color: #F2F2F2;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    font-weight: 550;
+    text-align: center;
+}
+
+/* 輸入欄 */
+
+.inputlist{
+    margin-top: 30px;
+}
+
+.inputlist .listToDo{
+    border-radius: 5px;
+    width: 600px;
+    height: 35px;
+    background-color: #F2F2F2;
+    color: #1E2336 ;
+    font-size: 16px;
+}
+
+.inputlist .addlistbtn{
+    height: 40px;
+    width: 70px;
+    border-radius: 5px;
+    background-color: #C5CB9B;
+    color: #1E2336;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+.inputlist .addlistbtn:hover{
+    background-color: #F6EB00;
+}
+
+.list{
+    margin-bottom: 10px;
+}
+
+.list li{
+    display: flex;
+    width: 680px;
+    margin-top: 10px;
+}
+
+.list li span{
+    display: block;
+    background-color: #F6EB00;
+    border-radius: 5px;
+    width: 608px;
+    color: #1E2336 ;
+    font-size: 16px;
+    font-weight: 800;
+    padding: 10px;
+}
+
+.list li a {
+    display: block;
+    width: 70px;
+    border-radius: 5px;
+    background-color: #C5CB9B;
+    color: #1E2336;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 10px;
+    margin-left: 5px;
+    transition-duration: 0.3s;
+}
+
+
+.list li a:hover{
+    background-color:  #1E2336;
+    border: 2px solid #ED9678;
+    color: #ED9678;
+}
